@@ -1,0 +1,33 @@
+.card{
+    /* display: flex;  */
+    float: left;
+    flex-direction: row;
+  }
+  .fornt_side{
+    background-image: url(https://i.pinimg.com/736x/80/a0/22/80a0224cf65fb17a239b5565f51fed9b.jpg);
+      height: 650px;
+      width: 350px;
+      background-size: cover;
+      border-radius: 10px;
+  }
+  .profile_pic{
+      text-align: center;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      display: flex;
+  }
+  .profile_pic img{
+      margin-top: 10px;
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 50%;
+  }
+  .profile_text h3{
+      border-radius: 10px;
+      margin: 10px 10px;
+      padding: 7px;
+      text-align: left;
+      background-color: rgb(81, 126, 117);
+  }
