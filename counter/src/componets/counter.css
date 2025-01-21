@@ -1,0 +1,25 @@
+.card{
+    background-image: url(https://i.pinimg.com/736x/db/e2/76/dbe2767b861672e53d8fa8f97c6e30b6.jpg);
+    width: 450px;
+    border-radius: 10px;
+    height: 250px;
+    border: 1px solid #000000;
+}
+.card h1{
+    color: black;
+    text-transform: uppercase;
+    font-size: 38px;
+}
+.card h2{
+    color: black;
+}
+.btn:disabled{
+     color: rgb(141, 151, 151);
+}
+button{
+   padding: 10px 20px;
+   margin: 5px;
+   background-color: rgb(103, 80, 80);
+   color: rgb(252, 252, 252);
+   text-transform: uppercase;
+}
