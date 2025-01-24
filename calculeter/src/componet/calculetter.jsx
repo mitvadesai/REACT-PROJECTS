@@ -24,33 +24,33 @@ const Calculetter = () => {
                 <div className="box_patten">
                 <div className="display">{input || "0"}</div>
                     <div className="first_row">
-                        <p onClick={()=>handlebuttonclick("C")}>C</p>
-                        <p><a href="">\</a></p>
-                        <p><a href="">*</a></p>
-                        <p><a href="">.</a></p>
+                        <p><a onClick={()=>handlebuttonclick("C")}>C</a></p>
+                        <p><a onClick={()=>handlebuttonclick("/")}>/</a></p>
+                        <p><a onClick={()=>handlebuttonclick("*")}>*</a></p>
+                        <p><a onClick={()=>handlebuttonclick(".")}>.</a></p>
                     </div>
                     <div className="secound_row">
-                    <p onClick={()=>handlebuttonclick("7")}>7</p>
-                        <p><a href=""onClick={()=>handlebuttonclick("8")}>8</a></p>
-                        <p><a href="">9</a></p>
-                        <p><a href="">-</a></p>
+                        <p><a onClick={()=>handlebuttonclick("7")}>7</a></p>
+                        <p><a onClick={()=>handlebuttonclick("8")}>8</a></p>
+                        <p><a onClick={()=>handlebuttonclick("9")}>9</a></p>
+                        <p onClick={()=>handlebuttonclick("-")}>-</p>
                     </div>
                     <div className="third_row">
-                        <p><a href="">4</a></p>
-                        <p><a href="">5</a></p>
-                        <p><a href="">6</a></p>
-                        <p><a href="">+</a></p>
+                        <p><a onClick={()=>handlebuttonclick("4")}>4</a></p>
+                        <p><a onClick={()=>handlebuttonclick("5")}>5</a></p>
+                        <p><a onClick={()=>handlebuttonclick("6")}>6</a></p>
+                        <p onClick={()=>handlebuttonclick("+")}>+</p>
                     </div>
                     <div className="forth_row">
-                        <p><a href="">1</a></p>
-                        <p><a href="">2</a></p>
-                        <p><a href="">3</a></p>
+                        <p><a onClick={()=>handlebuttonclick("1")}>1</a></p>
+                        <p><a onClick={()=>handlebuttonclick("2")}>2</a></p>
+                        <p><a onClick={()=>handlebuttonclick("3")}>3</a></p>
                     </div>
                     <div className="fifth_row">
-                        <p><a href="">0</a></p>
-                        <p><a href="">(</a></p>
-                        <p><a href="">)</a></p>
-                        <p><a href="">=</a></p>
+                        <p onClick={()=>handlebuttonclick("0")}>0</p>
+                        <p onClick={()=>handlebuttonclick("(")}>(</p>
+                        <p a onClick={()=>handlebuttonclick(")")}>)</p>
+                        <p onClick={()=>handlebuttonclick("=")}>=</p>
                     </div>
                 </div>
             </div>

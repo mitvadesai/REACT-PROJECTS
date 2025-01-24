@@ -6,14 +6,13 @@ body{
     width: 350px;
     background-color: rgb(49, 47, 47);
     border-radius: 10px;
+    cursor: pointer;
 }
 h1{
     color: #000;
     font-size: 32px;
 }
 .display {
-    /* height: 60px; */
-    /* background-color: #333; */
     color: #fff;
     font-size: 40px;
     text-align: right;
