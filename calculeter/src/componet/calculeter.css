@@ -1,0 +1,208 @@
+body{
+    background-color: aliceblue;
+}
+.box{
+    height: 550px;
+    width: 350px;
+    background-color: rgb(49, 47, 47);
+    border-radius: 10px;
+}
+h1{
+    color: #000;
+    font-size: 32px;
+}
+.display {
+    /* height: 60px; */
+    /* background-color: #333; */
+    color: #fff;
+    font-size: 40px;
+    text-align: right;
+    padding: 10px;
+    margin-top: -90px;
+    border-radius: 5px;
+  }
+.first_row{
+    display: flex;
+}
+.box_patten{
+    padding-top: 150px;
+    padding-left: 30px;
+}
+.first_row p a{
+    color: rgb(30, 86, 67);
+}
+.first_row p{
+    color: rgb(30, 86, 67);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 10px 10px 10px;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(210, 226, 233);
+}
+.secound_row{
+    display: flex;
+}
+.secound_row p a{
+    color:  rgb(210, 226, 233);
+}
+.secound_row p{
+    color:  rgb(210, 226, 233);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 10px 10px 10px;
+    width: 20px;
+    height: 20px;
+    background-color:  rgb(30, 86, 67);
+}
+.secound_row p:nth-child(4){
+    color: rgb(30, 86, 67);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 10px 10px 10px;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(210, 226, 233);
+}
+.secound_row p:nth-child(4){
+    color: rgb(30, 86, 67);
+}
+.third_row{
+    display: flex;
+}
+.third_row p{
+    color:  rgb(210, 226, 233);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 10px 10px 10px;
+    width: 20px;
+    height: 20px;
+    background-color:  rgb(30, 86, 67);
+}
+.third_row p a{
+    color:  rgb(210, 226, 233);
+}
+.third_row p:nth-child(4){
+    color: rgb(30, 86, 67);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 10px 10px 10px;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(210, 226, 233);
+}
+.forth_row{
+    display: flex;
+}
+.forth_row p{
+    color:  rgb(210, 226, 233);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 10px 10px 10px;
+    width: 20px;
+    height: 20px;
+    background-color:  rgb(30, 86, 67);
+}
+.forth_row p a{
+    color:  rgb(210, 226, 233);
+}
+.forth_row p:nth-child(4){
+    color: rgb(30, 86, 67);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 10px 10px 10px;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(210, 226, 233);
+}
+.fifth_row{
+    display: flex;
+}
+.fifth_row p{
+    color: rgb(30, 86, 67);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 10px 10px 10px;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(210, 226, 233);
+}
+.fifth_row p:nth-child(1){
+    color:  rgb(210, 226, 233);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 10px 10px 10px;
+    width: 20px;
+    height: 20px;
+    background-color:  rgb(30, 86, 67);
+}
+.fifth_row p:nth-child(4){
+    color:  rgb(210, 226, 233);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 20px;
+    margin: -70px 10px 10px 10px;
+    width: 20px;
+    height: 100px;
+    background-color:  rgb(123, 150, 60);
+}
+
