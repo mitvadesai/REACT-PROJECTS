@@ -1,0 +1,30 @@
+/* http://maraviyainfotech.com/projects/carrot/carrot-v2/carrot-html/index.html */
+
+/* =============--== carousel ==--=========== */
+
+.Carousel img{
+    height: 297.6px;
+    width: 150%;
+    /* background-image: url(https://maraviyainfotech.com/projects/carrot/carrot-v2/carrot-html/assets/img/banner/banner.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* =========--== header ==--========= */
+
+.header{
+    padding: 20px 0;
+    flex-direction: row;
+    grid-gap: 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid #e9e9e9;
+    display: flex;
+    position: relative;
+    z-index: 4;
+}
+.logo img{
+    width: 115px;
+    height: 35px;
+}
+
