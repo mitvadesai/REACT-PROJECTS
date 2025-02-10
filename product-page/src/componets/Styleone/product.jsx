@@ -39,7 +39,7 @@ const Product = () => {
               name="fruits"
               star="★★★★★"
               rating="(4.5)"
-              intro="Fresh organic apple 1kg simla"
+              intro="Fresh organic apple 1kg simla marming"
               price="$120.25"
               oldprice="123.25"
             />
@@ -57,7 +57,7 @@ const Product = () => {
               name="sanks"
               star="★★★★★"
               rating="(5.0)"
-              intro="Sweet crunchy nut mix 250gm pack"
+              intro="Sweet crunchy with nut mix 250gm pack"
               price="$120.25"
               oldprice="123.25"
             />

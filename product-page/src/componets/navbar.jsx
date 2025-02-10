@@ -64,7 +64,8 @@ const Navbar = () => {
               <li className="nav-item">
                 <div className="dropdown">
                   <button className="dropdown-button nav-link text-underline">
-                    {/* Blog <img src={dropdown} className="dropdown-logo" alt="dropdown" /> */}
+                    Blog 
+                    {/* <img src={dropdown} className="dropdown-logo" alt="dropdown" /> */}
                   </button>
                   <div className="dropdown-content">
                     <a href="#">Left Sidebar</a>

@@ -1,3 +1,4 @@
+import { AiOutlineHeart } from "react-icons/ai";
 const Styleone = (props) => {
 
     const {img , name , star , rating , intro , price , oldprice  } = props;
@@ -9,7 +10,7 @@ const Styleone = (props) => {
                </div>
                <div className="card-btn">
                  <div className="heart">
-                    <img src="https://png.pngtree.com/template/20191025/ourlarge/pngtree-love-interface-line-vector-single-icon-image_319675.jpg" alt="hearticon" />
+                 <AiOutlineHeart />
                  </div>
                  <div className="eye">
                     <img src="https://static.vecteezy.com/system/resources/previews/014/475/656/original/eye-icon-simple-flat-eye-design-vision-care-concept-wear-glasses-for-a-clear-vision-png.png" alt="eye" />
