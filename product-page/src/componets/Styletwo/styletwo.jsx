@@ -6,15 +6,12 @@ const Styletwo = (props) => {
                 <div className="two_img">
                     <img src={img} alt="productimage" />
                 </div>
-                <div className="shopping-bag">
-                    {/* <img src="https://static.vecteezy.com/system/resources/previews/000/422/881/original/shopping-bag-icon-vector-illustration.jpg" alt="shopping-bag" /> */}
-                </div>
                 <div className="card-btn">
-                    <div className="heart">
-                        {/* <img src="https://cdn.vectorstock.com/i/1000v/37/83/heart-icon-love-vector-23683783.avif" alt="hearticon" /> */}
-                    </div>
+                <div className="heart">
+                    <img src="https://png.pngtree.com/template/20191025/ourlarge/pngtree-love-interface-line-vector-single-icon-image_319675.jpg" alt="hearticon" />
+                 </div>
                     <div className="eye">
-                        {/* <img src="https://static.vecteezy.com/system/resources/previews/014/475/656/original/eye-icon-simple-flat-eye-design-vision-care-concept-wear-glasses-for-a-clear-vision-png.png" alt="eye" /> */}
+                        <img src="https://static.vecteezy.com/system/resources/previews/014/475/656/original/eye-icon-simple-flat-eye-design-vision-care-concept-wear-glasses-for-a-clear-vision-png.png" alt="eye" />
                     </div>
                 </div>
                 <div className="card-data">

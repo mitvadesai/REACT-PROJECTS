@@ -3,7 +3,7 @@ import{Card,Button  } from 'react-bootstrap'
 import './App.css'
 import Header from './Componets/header'
 import {Spinner} from 'react-bootstrap'
-import Banner from './Componets/banner'
+import Popular_product from './Componets/popular-product'
 
 function App() {
 
@@ -11,9 +11,7 @@ function App() {
   return (
     <>
     <Header/>
-    <Banner/>
-     
-      
+     <Popular_product/> 
     </>
   )
 }
