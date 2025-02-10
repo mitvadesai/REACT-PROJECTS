@@ -1,5 +1,5 @@
-// import dropdown from "../assets/drop.svg";
-// import phone from "../assets/phone.svg";
+import { IoCallOutline } from "react-icons/io5";
+import { MdKeyboardArrowDown } from "react-icons/md";
 const Navbar = () => {
   return (
     <>
@@ -13,13 +13,14 @@ const Navbar = () => {
               <li className="nav-item">
                 <a className="nav-link text-underline" aria-current="page" href="#">
                   Home
+                  <i><MdKeyboardArrowDown /></i>
                 </a>
               </li>
               <li className="nav-item">
                 <div className="dropdown">
                   <button className="dropdown-button nav-link text-underline">
                     Category
-                    {/* <img src={dropdown} className="dropdown-logo" alt="dropdown" /> */}
+                    <i><MdKeyboardArrowDown /></i>
                   </button>
                   <div className="dropdown-content">
                     <a href="#">Shop Left Sidebar</a>
@@ -32,7 +33,7 @@ const Navbar = () => {
                 <div className="dropdown">
                   <button className="dropdown-button nav-link text-underline">
                     Products
-                    {/* <img src={dropdown} className="dropdown-logo" alt="dropdown" /> */}
+                    <i><MdKeyboardArrowDown /></i>
                   </button>
                   <div className="dropdown-content">
                     <a href="#">Product Left Sidebar</a>
@@ -45,7 +46,7 @@ const Navbar = () => {
                 <div className="dropdown">
                   <button className="dropdown-button nav-link text-underline">
                     Pages
-                    {/* <img src={dropdown} className="dropdown-logo" alt="dropdown" /> */}
+                    <i><MdKeyboardArrowDown /></i>
                   </button>
                   <div className="dropdown-content">
                     <a href="#">About Us</a>
@@ -65,7 +66,7 @@ const Navbar = () => {
                 <div className="dropdown">
                   <button className="dropdown-button nav-link text-underline">
                     Blog 
-                    {/* <img src={dropdown} className="dropdown-logo" alt="dropdown" /> */}
+                    <i><MdKeyboardArrowDown /></i>
                   </button>
                   <div className="dropdown-content">
                     <a href="#">Left Sidebar</a>
@@ -81,7 +82,7 @@ const Navbar = () => {
                 <div className="dropdown">
                   <button className="dropdown-button nav-link text-underline">
                     Elements
-                    {/* <img src={dropdown} className="dropdown-logo" alt="dropdown" /> */}
+                    <i><MdKeyboardArrowDown /></i>
                   </button>
                   <div className="dropdown-content">
                     <a href="#">Products</a>
@@ -93,7 +94,8 @@ const Navbar = () => {
             </ul>
           </div>
           <div>
-            <p className="phone"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd7hMZQfigOJp02co0KF2sBJYEY2XXBcl-fQ&s" className="phone-logo" alt="phone" />+123 ( 456 ) ( 7890 )</p>
+            <p className="phone"><i><IoCallOutline /></i> 
+            +123 ( 456 ) ( 7890 )</p>
           </div>
         </nav>
       </div>

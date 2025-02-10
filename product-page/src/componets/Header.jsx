@@ -1,8 +1,6 @@
-// import Logo from "../assets/logo.png";
-// import Seacrh from "../assets/search.svg";
-// import Wishlist from "../assets/wishlist.svg";
-// import Dropdown from "../assets/drop.svg";
-
+import { IoHeartOutline } from "react-icons/io5";
+import { LuShoppingCart } from "react-icons/lu";
+import { FiUser } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
 const Header = () => {
   return (
@@ -80,7 +78,7 @@ const Header = () => {
             <ul className="navbar-nav me-auto mb-2 user-section mb-lg-0 ">
               <div className="dropdown">
                 <button className="dropdown-button nav-link">
-                    {/* <img src="https://as1.ftcdn.net/v2/jpg/03/64/88/42/1000_F_364884228_JIux2brVPuxvpm7wmgShdUMWkOAQCsXM.jpg" className="user-logo" alt="user" /> */}
+                <i><FiUser /></i>&nbsp;
                     Account</button>
                 <div className="dropdown-content">
                   <a href="#">Register</a>
@@ -90,13 +88,13 @@ const Header = () => {
               </div>
               <li className="nav-item">
                 <a className="nav-link" aria-current="page" href="#">
-                  {/* <img src={Wishlist} className="wish-logo" alt="wishlist" /> */}
-                  Wishlist
+                <i><IoHeartOutline /></i>&nbsp;
+                Wishlist
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link me-0" href="#">
-                  <img src="https://static.vecteezy.com/system/resources/previews/027/381/351/non_2x/shopping-cart-icon-shopping-trolley-icon-shopping-cart-logo-container-for-goods-and-products-economics-symbol-design-elements-basket-symbol-silhouette-retail-design-elements-vector.jpg" className="cart-logo" alt="cart" />
+                <i><LuShoppingCart /></i>&nbsp;
                   Cart
                 </a>
               </li>

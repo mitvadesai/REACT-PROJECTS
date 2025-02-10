@@ -150,6 +150,7 @@
   }
   
   .user-section {
+    font-family: "Poppins", serif;
     display: flex;
     align-items: center;
     font-weight: 600;
@@ -215,10 +216,14 @@
   }
   
   .main-navbar .nav-link {
+    font-family: "Poppins", serif;
     color: #000;
     font-size: 14px;
     margin-right: 25px;
     font-weight: 500;
+  }
+  .nav-link i{
+    font-size: 22px;
   }
   
   .list-logo {
@@ -227,9 +232,14 @@
     padding: 6px;
     width: 33px;
   }
-  
-  .phone {
-    font-size: 15px;
+  .main-navbar .nav-link i{
+    color: #000;
+    font-size:17px;
+    padding: 2px;
+}
+  .phone{
+    margin-top: 11px;
+    font-size: 16px;
     font-weight: 500;
     margin-right: 5px;
   }
