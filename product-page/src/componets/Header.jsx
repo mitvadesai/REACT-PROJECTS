@@ -1,6 +1,8 @@
 import { IoHeartOutline } from "react-icons/io5";
 import { LuShoppingCart } from "react-icons/lu";
 import { FiUser } from "react-icons/fi";
+import { LuSearch } from "react-icons/lu";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 const Header = () => {
   return (
@@ -35,15 +37,14 @@ const Header = () => {
                 <ul className="navbar-nav me-auto">
                   <li className="nav-item dropdown all-categories">
                     <a
-                      className="nav-link dropdown-toggle"
+                      className="nav-link"
                       href="#"
                       role="button"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      All Categories
-                      <img src="https://th.bing.com/th/id/OIP.yQxVl3uYhegN6ykRtTG_MQHaHk?rs=1&pid=ImgDetMain"className="dropdown-logo" alt="dropdown" />
-                    </a>
+                      All Categories&nbsp;<i><MdKeyboardArrowDown /></i></a>
+                      <p><LuSearch /></p>
                     <ul className="dropdown-menu m-0 p-0">
                       <li>
                         <a className="dropdown-item cat-drop" href="#">
