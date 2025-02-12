@@ -11,6 +11,7 @@ const Crud = () => {
     id: "",
     name: "",
     age: "",
+    email: "",
     deparment: "",
     position: "",
     mobnub: "",
@@ -96,6 +97,20 @@ const Crud = () => {
                   />
                 </Col>
               </Form.Group>
+              <Form.Group as={Row}>
+                <Form.Label>
+                  email :
+                </Form.Label>
+                <Col>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter your email"
+                    name="age"
+                    value={inputForm.age}
+                    onChange={handleChange}
+                  />
+                </Col>
+              </Form.Group>
 
               <Form.Group as={Row}>
                 <Form.Label>
@@ -157,6 +172,7 @@ const Crud = () => {
                 <th>#</th>
                 <th>name</th>
                 <th>age</th>
+                <th>email</th>
                 <th>deparment</th>
                 <th>position</th>
                 <th>number</th>
@@ -170,6 +186,7 @@ const Crud = () => {
                     <td>{details.id}</td>
                     <td>{details.name}</td>
                     <td>{details.age}</td>
+                    <td>{details.email}</td>
                     <td>{details.deparment}</td>
                     <td>{details.position}</td>
                     <td>{details.number}</td>
