@@ -39,7 +39,7 @@ const Home = () => {
                         <FaPenToSquare /> EDIT
                         </Button> &nbsp;
                       <Button onClick={()=> handleDelete(book.id)} variant="danger">
-                        <FaTrash /> DELEAT
+                        <FaTrash /> DELETE
                       </Button>
                     </Card.Body>
                   </Card>

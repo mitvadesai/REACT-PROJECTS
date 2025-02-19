@@ -11,12 +11,12 @@
 }
 .text{
     color: #000000;
-    font-size: 14px;
+    font-size: 16px;
     display: flex;
 }
 p{
     color: #000000;
-    font-size: 18px;
+    font-size: 17px;
 }
 .form{
     border: 1px double black;
@@ -39,5 +39,27 @@ h2{
 }
 .btn{
     background-color: #000;
-    opacity: 0.5;
+}
+.body{
+    width: 570px;
+}
+.back{
+    margin: 40px 50%;
+    width: 200px;
+    height: 60px;
+    font-size: 24px;
+}
+.imgage{
+    width: 550px;
+    margin: 10px;
+    border: 1px solid black;
+}
+.textt{
+    display: flex;
+}
+.textt p{
+    font-size: 18px;
+}
+.textt{
+    font-size: 20px;
 }

@@ -1,56 +1,43 @@
 
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import { getOldStorage, setLocalStorageData } from "../Services/Localstoragedata";
-import { Navigate, useNavigate, useParams } from "react-router";
 import { useState } from "react";
-const Viewbook = () => {
-    const {id} = useParams();
-    
-    // const navigate = useNavigate();
-    // const initalProduct = {
-    //     id: "",
-    //     title: "",
-    //     desc: "",
-    //     price: "",
-    //     author: "",
-    //     image: "",
-    //     language: "",
-    //   };
-   
+import { getOldStorage, setLocalStorageData } from "../Services/Localstoragedata";
+import { Button, Card, Col, Container } from "react-bootstrap";
+import { useNavigate } from "react-router"
 
-      const handleBack = () => {
-        navigate('/')
-      }
+const Home = () => {
+    const navigate = useNavigate();
 
-    //   const [inputForm, setInputForm] = useState(initalProduct);
-          const handleSubmit = (e) => {
-                e.preventDefault();
-                console.log(" updateSubmit", inputForm)
-                let data = getOldStorage();
-                let updateData = data.map(book => {
-                    if(book.id == inputForm.id){
-                        return inputForm
-                    }else{
-                        return book
-                    }
-                });
-                setLocalStorageData(updateData);
-                // Navigate("/");
-          }
+    const [book, setbook] = useState(getOldStorage());
+
+    const handleBack = () => {
+      navigate('/')
+    }
     return(
         <>
-        <Container className="mt-3">
-        <h2>view book</h2>
-        <Form onSubmit={handleSubmit}>
-              <Form.Group as={Row} className="mb-3">
-                <Form.Label column sm="2"></Form.Label>
-                <Col sm="10">
-                  <Button type="submit"  onClick={handleBack}>BACK</Button>
-                </Col>
-              </Form.Group>
-            </Form>
-      </Container>
-    </>
+            <h2>View Book</h2>
+            <Container className="d-flex gap-4 mt-4" >
+          
+                {book.map((book) => (
+                    <Card key={book.id} className="body">
+                    <Card.Img variant="top" src={book.image} className="imgage"/>
+                    <Card.Body >
+                      <Card.Title className="textt"><p>TITLE : &nbsp;&nbsp;</p> {book.title}</Card.Title>
+                      <Card.Title className="textt"><p>DESC : &nbsp;&nbsp;</p>{book.desc}</Card.Title>
+                      <Card.Title className="textt"><p>AUTHOR : &nbsp;&nbsp;</p>{book.author}</Card.Title>
+                      <Card.Title className="textt"><p>PRICE : &nbsp;&nbsp;</p> {book.price}</Card.Title>
+                      <Card.Title className="textt"><p>LANGUAGE : &nbsp;&nbsp;</p>{book.language}</Card.Title>
+                    </Card.Body>
+                  </Card>
+                ))}
+               
+                
+              
+        
+            </Container>
+            <Col sm="10">
+                   <Button className="back" type="submit"  onClick={handleBack}>BACK</Button>
+                 </Col>
+        </>
     )
 }
- export default Viewbook;
+export default Home;
