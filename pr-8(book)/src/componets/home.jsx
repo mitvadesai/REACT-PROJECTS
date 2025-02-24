@@ -11,6 +11,23 @@ const Home = () => {
     const [filterData, setFilterData] = useState(getOldStorage());
     const [search, setSearch] = useState("");
     
+    const handleSorting = (field, type) => {
+
+        if(type === 'asc'){
+          let sortedData =    [...filterData].sort((a,b)=> {
+            return a[field].localeCompare(b[field]);
+          })
+  
+          setFilterData(sortedData);
+        }else if(type === 'desc'){
+          let sortedData =    [...filterData].sort((a,b)=> {
+            return b[field].localeCompare(a[field]);
+          })
+  
+          setFilterData(sortedData);
+        }
+        
+      }
     
     const [currentPage, setCurrentPage] = useState(1);
     const booksPerPage = 3;
@@ -54,7 +71,8 @@ const Home = () => {
         <>
             <div className="d-flex ms-5 gap-4 mt-5">
                 <input type="text" value={search} name="search" onChange={(e) => setSearch(e.target.value)} />
-                <Button onClick={handleSearch}>Search</Button>
+                <Button onClick={handleSearch}>SEARCH</Button>
+             <Button onClick={() => handleSorting('title'||'price','asc')}>ASCENDING ⬆️</Button>||<Button  onClick={() => handleSorting('title'||'price','desc')}>DESCENDING⬇️</Button>
             </div>
             
             <Container className="d-flex flex-wrap gap-4 mt-4">
@@ -83,11 +101,11 @@ const Home = () => {
             
             <div className="d-flex justify-content-center mt-4">
                 <Button onClick={prevPage} disabled={currentPage === 1} variant="outline-primary" className="me-2">
-                    Previous
+                 PREVIOUS
                 </Button>
-                <span> Page {currentPage} of {totalPages} </span>
+                <span> PAGE {currentPage} of {totalPages} </span>
                 <Button onClick={nextPage} disabled={currentPage === totalPages} variant="outline-primary" className="ms-2">
-                    Next
+                    NEXT
                 </Button>
             </div>
         </>
