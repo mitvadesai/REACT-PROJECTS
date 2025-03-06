@@ -1,0 +1,24 @@
+img{
+    height: 50px;
+    width: 50px;
+}
+a.navbar-brand {
+    font-size: 25px;
+    color: rgb(91, 86, 86);
+}
+input.search.form-control {
+    width: 290%;
+    background-color: rgb(223, 223, 223);
+    margin-left: 100px;
+    height: 45px;
+}
+i svg{
+    margin: 10px;
+    width: 20px;
+    height: 20px;
+}
+a svg{
+    margin: 10px;
+    width: 20px;
+    height: 20px;
+}
