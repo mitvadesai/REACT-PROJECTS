@@ -1,73 +1,83 @@
-const initalState = {
+// const initialState = {
+//     Note: JSON.parse(localStorage.getItem('Note')) || [],
+// }
+
+
+// export const NoteReducer = (state = initalState, action) => {
+//     switch (action.type) {
+//         case "Add_Note":
+//             let oldData = [...state.Note, action.payload];
+//             localStorage.setItem('Note', JSON.stringify(oldData));
+//             return {
+//                 ...state,
+//                 Note: [...state.Note, action.payload],
+               
+//             }
+
+    
+
+//         case "Delete_Note":
+//             let allData = JSON.parse(localStorage.getItem('Note')) || []
+//             let deletedNote = allData.filter((data) => data.id != action.payload)
+//             localStorage.setItem('Note', JSON.stringify(deletedNote));
+//             return {
+//                 ...state,
+//                 Note: deletedNote
+//             }
+            
+//     }
+// }
+
+
+// export const NoteReducer = (state = initialState, action) => {
+//     switch (action.type) {
+//         case "Add_Note":
+//             let updatedNotes = [...state.Note, action.payload];
+//             localStorage.setItem('Note', JSON.stringify(updatedNotes));
+//             return {
+//                 ...state,
+//                 Note: updatedNotes,
+//             };
+
+//         case "Delete_Note":
+//             let filteredNotes = state.Note.filter((data) => data.id !== action.payload);
+//             localStorage.setItem('Note', JSON.stringify(filteredNotes));
+//             return {
+//                 ...state,
+//                 Note: filteredNotes,
+//             };
+
+//         default:
+//             return state; // Always return state if action type is not matched
+//     }
+// };
+
+
+const initialState = {
     Note: JSON.parse(localStorage.getItem('Note')) || [],
-    Note: null,
-    isCreated: false,
-    isUpdate: false,
-}
+    isCreated: false // ✅ Added `isCreated` flag
+};
 
-
-export const NoteReducer = (state = initalState, action) => {
+export const NoteReducer = (state = initialState, action) => {
     switch (action.type) {
         case "Add_Note":
-            let oldData = [...state.Note, action.payload];
-            localStorage.setItem('Note', JSON.stringify(oldData));
+            let updatedNotes = [...state.Note, action.payload];
+            localStorage.setItem('Note', JSON.stringify(updatedNotes));
             return {
                 ...state,
-                Note: [...state.Note, action.payload],
-                isCreated: true
-            }
-
-        case "Get_All_Note":
-            let allNote = JSON.parse(localStorage.getItem('Note')) || []
-            return {
-                ...state,
-                isCreated: false,
-                isUpdate: false,
-                Note: allNote,
-                isLoading: false
-            }
+                Note: updatedNotes,
+                isCreated: true, // ✅ Set flag after adding note
+            };
 
         case "Delete_Note":
-            let allData = JSON.parse(localStorage.getItem('Note')) || []
-            let deletedNote = allData.filter((data) => data.id != action.payload)
-            localStorage.setItem('Note', JSON.stringify(deletedNote));
+            let filteredNotes = state.Note.filter((data) => data.id !== action.payload);
+            localStorage.setItem('Note', JSON.stringify(filteredNotes));
             return {
                 ...state,
-                isCreated: false,
-                Note: deletedNote
-            }
+                Note: filteredNotes,
+            };
 
-        case "Get_Note":
-            let allDatas = JSON.parse(localStorage.getItem('Note')) || []
-            let singleNote = allDatas.find(data => data.id == action.payload)
-            return {
-                ...state,
-                recipe: singleNote
-            }
-
-        case "Update_Note":
-            let data = JSON.parse(localStorage.getItem('Note')) || []
-            let updatedData = data.map((Note) => {
-                if (Note.id == action.payload.id) {
-                    return action.payload
-                } else {
-                    return Note
-                }
-            })
-            localStorage.setItem('Note', JSON.stringify(updatedData));
-            return {
-                ...state,
-                recipe: null,
-                isUpdate: true,
-                Note: updatedData
-            }
-
-        case "Loading":
-            return {
-                ...state,
-                isLoading: true
-            }
         default:
             return state;
     }
-}
+};
