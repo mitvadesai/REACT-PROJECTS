@@ -22,3 +22,12 @@ a svg{
     width: 20px;
     height: 20px;
 }
+tbody, tfoot, th, thead, tr {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin-bottom: 20px;
+}
+tr{
+    border: 1px solid #000;
+}

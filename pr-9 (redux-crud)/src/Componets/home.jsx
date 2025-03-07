@@ -18,8 +18,8 @@ const Home = () => {
                     {Note.length > 0 ? (
                         Note.map((note) => (
                             <tr key={note.id}>
-                                <td>{note.title}</td>
-                                <td>{note.note}</td>
+                                <td>Title : {note.title}</td>
+                                <td>Note : {note.note}</td>
                                 <td>
                                     <Button onClick={() => handleDelete(note.id)}>Delete</Button>
                                 </td>
