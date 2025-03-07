@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Col, Container, Form, InputGroup, Row, Spinner, Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteNote, getAllNoteAsync } from "../services/actions/Note.action";
+
 import { useNavigate } from "react-router";
 
 const Home = () => {
@@ -16,9 +16,7 @@ const Home = () => {
         dispatch(deleteNote(id))
     }
 
-    useEffect(() => {
-        dispatch(getAllNoteAsync())
-    }, [Note])
+   
 
     return (
         <>

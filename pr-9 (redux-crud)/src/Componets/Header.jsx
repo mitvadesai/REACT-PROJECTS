@@ -27,7 +27,7 @@ const Header = () => {
                     </Form>
                     <Navbar.Collapse className="justify-content-end">
                         <Navbar.Text>
-                        <Link to={"/add"}><FaArrowRotateRight /></Link>
+                        <Link to={"/add"}>ADD<FaArrowRotateRight /></Link>
                         <i><FaBarsProgress /></i>
                         <i><IoSettings /></i>
                         </Navbar.Text>
