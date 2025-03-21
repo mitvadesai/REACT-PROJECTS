@@ -5,6 +5,7 @@ import Home from './components/Home'
 import AddProduct from './components/AddProduct'
 import EditProduct from './components/EditProduct'
 import Footer from './components/Footer'
+import ViewProduct from './components/viewProduct'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/add' element={<AddProduct />} />
         <Route path='/edit/:id' element={<EditProduct />} />
+        <Route path='/view/:id' element={<ViewProduct />} />
       </Routes>
       <Footer />
     </>

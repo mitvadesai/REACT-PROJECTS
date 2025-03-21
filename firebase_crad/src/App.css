@@ -38,6 +38,7 @@ a svg{
     font-size: 22px;
 }
 .footer{
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     height: 400px;
