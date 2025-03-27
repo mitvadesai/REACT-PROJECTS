@@ -1,81 +1,50 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { getProductAsync } from "../services/actions/Product.action";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { increaseQuantity, decreaseQuantity, removeFromCart } from "../services/actions/cartaction";
+import { Container, Button, ListGroup } from "react-bootstrap";
 
-const AddToCart = () => {
-  const { id } = useParams();
-  const dispatch = useDispatch();
-    const { isCreated } = useSelector(state => state.ProductReducer);
-  const { product } = useSelector((state) => state.ProductReducer);
-  const [quantity, setQuantity] = useState(1);
+const Cart = () => {
+    const { user } = useSelector(state => state.userReducer);
+    const { carts } = useSelector(state => state.cartReducer);
+    const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (id) {
-      dispatch(getProductAsync(id));
-    }
-  }, [id]);
+    const cartItems = user ? carts[user.id] || [] : [];
 
-  useEffect(() => {
-    if (isCreated) {
-        navigate("/");
-    }
-}, [isCreated]);
+    const handleIncrease = (id) => {
+        dispatch(increaseQuantity(user.id, id));
+    };
 
-  const handleRemoveFromCart = () => {
-    dispatch(handleRemoveFromCart(product.id));
-    alert("Removed from cart!");
-  };
+    const handleDecrease = (id) => {
+        dispatch(decreaseQuantity(user.id, id));
+    };
 
-  return (
-    <div className="container mt-5 d-flex">
-      {product && (
-        <>
-          {/* Left Side - Product Table */}
-          <div className="col-md-8">
-            <h2>Product Details</h2>
-            <table className="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Category</th>
-                  <th>Image</th>
-                  <th>Size</th>
-                  <th>Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{product.title}</td>
-                  <td>{product.category}</td>
-                  <td><img src={product.image} alt={product.title} style={{ width: '100px' }} /></td>
-                  <td>{product.size}</td>
-                  <td>{product.price}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+    const handleRemove = (id) => {
+        dispatch(removeFromCart(user.id, id));
+    };
 
-          {/* Right Side - Sidebar with Total and Cart Actions */}
-          <div className="col-md-4 border-start ps-4">
-            <h3>Order Summary</h3>
-            <input
-              type="number"
-              min="1"
-              value={quantity}
-              onChange={(e) => setQuantity(Number(e.target.value))}
-              className="form-control mb-3"
-            />
-            <h4>Total Price: ₹{product.price * quantity}</h4>
-            <button onClick={handleRemoveFromCart} className="btn btn-danger">
-              Remove from Cart
-            </button>
-          </div>
-        </>
-      )}
-    </div>
-  );
+    return (
+        <Container className="mt-4">
+            <h2>My Cart</h2>
+            {cartItems.length > 0 ? (
+                <ListGroup>
+                    {cartItems.map((item) => (
+                        <ListGroup.Item key={item.id} className="d-flex justify-content-between align-items-center">
+                            <div>
+                                <img src={item.image} alt={item.title} width="50" height="50" className="me-3"/>
+                                {item.title} - ₹{item.price} x {item.quantity}
+                            </div>
+                            <div>
+                                <Button variant="outline-danger" onClick={() => handleDecrease(item.id)}>-</Button>
+                                <Button variant="outline-success" onClick={() => handleIncrease(item.id)}>+</Button>
+                                <Button variant="danger" onClick={() => handleRemove(item.id)}>Remove</Button>
+                            </div>
+                        </ListGroup.Item>
+                    ))}
+                </ListGroup>
+            ) : (
+                <p>Your cart is empty.</p>
+            )}
+        </Container>
+    );
 };
 
-export default AddToCart;
+export default Cart;

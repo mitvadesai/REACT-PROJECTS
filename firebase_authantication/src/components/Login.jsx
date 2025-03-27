@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
-import { Button, Col, Container, Form, Row, Card } from "react-bootstrap";
+import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { loginUserAsync } from "../services/actions/auth.action";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { AiFillGoogleCircle } from "react-icons/ai";
+import { Link, useNavigate } from "react-router-dom"; // Fixed import
+import { loginUserAsync, loginWithGoogle } from "../services/actions/auth.action";
+import { FcGoogle } from "react-icons/fc"; // Google Icon
+import { FaEnvelope, FaLock } from "react-icons/fa"; // Email & Password Icons
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user, error } = useSelector((state) => state.userReducer);
+
   const [inputData, setInputData] = useState({
     email: "",
     password: "",
@@ -28,52 +29,70 @@ const Login = () => {
     dispatch(loginUserAsync(inputData));
   };
 
+  const handleGoogleLogin = () => {
+    dispatch(loginWithGoogle());
+  };
+
   useEffect(() => {
     if (user) {
       navigate("/");
     }
-  }, [user]);
+  }, [user, navigate]);
 
   return (
-    <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh" }}>
-      <Card style={{ width: "400px", padding: "20px", boxShadow: "0 4px 8px rgba(0,0,0,0.2)", borderRadius: "10px" }}>
+    <Container className="d-flex justify-content-center align-items-center vh-100">
+      <Card className="shadow p-4" style={{ width: "400px", borderRadius: "10px" }}>
         <h2 className="text-center mb-4">Login</h2>
         {error && <p className="text-danger text-center">{error}</p>}
+        
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
             <Form.Label>Email</Form.Label>
-            <Form.Control
-              type="email"
-              name="email"
-              value={inputData.email}
-              onChange={handleChanged}
-              placeholder="Enter Email"
-              required
-            />
+            <div className="input-group">
+              <span className="input-group-text">
+                <FaEnvelope />
+              </span>
+              <Form.Control
+                type="email"
+                name="email"
+                value={inputData.email}
+                onChange={handleChanged}
+                placeholder="Enter Email"
+                required
+              />
+            </div>
           </Form.Group>
+
           <Form.Group className="mb-3">
             <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              name="password"
-              value={inputData.password}
-              onChange={handleChanged}
-              placeholder="Enter Password"
-              required
-            />
+            <div className="input-group">
+              <span className="input-group-text">
+                <FaLock />
+              </span>
+              <Form.Control
+                type="password"
+                name="password"
+                value={inputData.password}
+                onChange={handleChanged}
+                placeholder="Enter Password"
+                required
+              />
+            </div>
           </Form.Group>
-          <Button type="submit" className="w-100 h-50 mb-3" variant="primary">
+
+          <Button type="submit" variant="primary" className="w-100 h-100 mb-3">
             Sign In
           </Button>
-          <Button className="w-100 h-50 mb-3 google" variant="danger">
-          <i><AiFillGoogleCircle /></i> Sign in with Google
+
+          <Button onClick={handleGoogleLogin} variant="outline-danger" className="w-100 h-100">
+            <FcGoogle size={20} className="me-2" />
+            Sign in with Google
           </Button>
-          <div className="text-center">
-            <p>
-              Don't have an account? <Link to="/signup">Register Now</Link>
-            </p>
-          </div>
         </Form>
+
+        <p className="text-center mt-3">
+          Don't have an account? <Link to="/signup">Register Now</Link>
+        </p>
       </Card>
     </Container>
   );
