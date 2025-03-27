@@ -7,7 +7,7 @@ import { TbEdit } from "react-icons/tb";
 import { MdDeleteOutline } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
-import { addToCartAsync } from "../services/actions/cartaction";
+import { addToCart } from "../services/actions/cartaction";
 
 
 const Home = () => {
@@ -66,9 +66,11 @@ const Home = () => {
         );
     };
 
-    const handleAddToCart = (product) => {
-        dispatch(addToCartAsync(product));
-    };
+   
+const handleAddToCart = (product) => {
+    dispatch(addToCart(product)); // Product को Cart में जोड़ना
+    alert(`${product.title} added to cart!`); // Confirmation Message
+};
 
     const handleSizeChange = (event) => {
         const size = event.target.value;
@@ -231,9 +233,7 @@ const Home = () => {
                                                     <Button variant="primary" onClick={() => handleEdit(Product.id)}><TbEdit /> Edit</Button>
                                                     <Button variant="danger" className="ms-2" onClick={() => handleDelete(Product.id)}><MdDeleteOutline /> Delete</Button>
                                                     {/* <Button variant="primary" className="ms-2" onClick={() => handleView(Product.id)}><FaEye /> view</Button> */}
-                                                    <Button variant="primary" className="ms-2" onClick={() => handleAddToCart(Product)}>
-    <MdOutlineShoppingCart /> Cart
-</Button>
+                                                    <Button variant="primary" className="ms-2" onClick={() => handleAddToCart(Product)}> <MdOutlineShoppingCart /> Cart</Button>
                                                 </Card.Body>
                                             </Card>
                                         </Col>

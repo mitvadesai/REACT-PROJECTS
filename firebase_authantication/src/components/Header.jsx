@@ -31,7 +31,7 @@ const Header = () => {
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
                         <Navbar.Text>
-                            <i onClick={toggleCart} style={{ cursor: 'pointer' }}><IoCart />&nbsp;&nbsp;Cart ({cart.length})</i>&nbsp;&nbsp;&nbsp;&nbsp;
+                        {/* <Link to="/Cart">Cart ({cartItems.length})</Link> Cart Item Count दिखाएगा */}
                             <Link to="/add"><IoIosAddCircle />&nbsp;&nbsp;Add Product</Link>&nbsp;&nbsp;&nbsp;&nbsp;
                             {user ? (
                                 <Button className="logout" onClick={handleLogout}><BiLogOutCircle />&nbsp;&nbsp;Logout</Button>
@@ -44,7 +44,7 @@ const Header = () => {
                 </Container>
             </Navbar>
 
-            <Offcanvas show={showCart} onHide={toggleCart} placement="end">
+            {/* <Offcanvas show={showCart} onHide={toggleCart} placement="end">
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>My Cart</Offcanvas.Title>
                 </Offcanvas.Header>
@@ -61,7 +61,7 @@ const Header = () => {
                         <p>Your cart is empty.</p>
                     )}
                 </Offcanvas.Body>
-            </Offcanvas>
+            </Offcanvas> */}
         </>
     );
 };
