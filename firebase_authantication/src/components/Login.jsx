@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom"; // Fixed import
+import { Link, useNavigate } from "react-router-dom"; 
 import { loginUserAsync, loginWithGoogle } from "../services/actions/auth.action";
-import { FcGoogle } from "react-icons/fc"; // Google Icon
-import { FaEnvelope, FaLock } from "react-icons/fa"; // Email & Password Icons
+import { FcGoogle } from "react-icons/fc"; 
+import { FaEnvelope, FaLock } from "react-icons/fa"; 
 
 const Login = () => {
   const navigate = useNavigate();

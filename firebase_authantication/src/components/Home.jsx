@@ -211,7 +211,7 @@ const handleAddToCart = (product) => {
                     </ListGroup>
                 </Col>
                 
-                {/* Main Content */}
+                
                 <Col md={9} className="mx-auto">
                     {isLoading ? (
                         <Spinner className="spinner-border text-danger" />

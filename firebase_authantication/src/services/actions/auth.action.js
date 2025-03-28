@@ -38,7 +38,7 @@ export const registerUserAsync = (data) => {
     return async (dispatch) => {
         try {
             let newUser = await createUserWithEmailAndPassword(auth, data.email, data.password)
-            // console.log(newUser);
+          
             dispatch(signUpSuc())
         } catch (error) {
             console.log(error);
@@ -51,7 +51,7 @@ export const loginUserAsync = (data) => {
     return async (dispatch) => {
         try {
             let loginUser = await signInWithEmailAndPassword(auth, data.email, data.password)
-            // console.log(loginUser.user);
+           
             dispatch(loginSuc({...loginUser.user, id: loginUser.user.uid}))
         } catch (error) {
             console.log(error);
@@ -66,7 +66,7 @@ export const loginWithGoogle = () => {
             const provider = new GoogleAuthProvider();
 
             let result = await signInWithPopup(auth, provider)
-            // console.log(result.user);
+            
 
             if(result){
                 let user = {
