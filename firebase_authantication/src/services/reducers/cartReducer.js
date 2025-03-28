@@ -1,5 +1,5 @@
 const initialState = {
-    cartItems: [], // Cart में जो भी प्रोडक्ट्स होंगे, उन्हें यहाँ स्टोर करेंगे
+    cartItems: [], 
 };
 
 const cartReducer = (state = initialState, action) => {
@@ -7,17 +7,17 @@ const cartReducer = (state = initialState, action) => {
         case "ADD_TO_CART":
             return {
                 ...state,
-                cartItems: [...state.cartItems, action.payload] // Cart में नया प्रोडक्ट ऐड करना
+                cartItems: [...state.cartItems, action.payload]
             };
         case "REMOVE_FROM_CART":
             return {
                 ...state,
-                cartItems: state.cartItems.filter(item => item.id !== action.payload) // Cart से प्रोडक्ट हटाना
+                cartItems: state.cartItems.filter(item => item.id !== action.payload) 
             };
         case "CLEAR_CART":
             return {
                 ...state,
-                cartItems: [] // Cart को पूरी तरह से खाली करना
+                cartItems: [] 
             };
         default:
             return state;

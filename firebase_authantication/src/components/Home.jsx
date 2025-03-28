@@ -68,8 +68,8 @@ const Home = () => {
 
    
 const handleAddToCart = (product) => {
-    dispatch(addToCart(product)); // Product को Cart में जोड़ना
-    alert(`${product.title} added to cart!`); // Confirmation Message
+    dispatch(addToCart(product)); 
+    alert(`${product.title} added to cart!`); 
 };
 
     const handleSizeChange = (event) => {
