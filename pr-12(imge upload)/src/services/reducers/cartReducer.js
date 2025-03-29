@@ -1,18 +1,25 @@
+const getCartFromLocalStorage = () => {
+    const cart = JSON.parse(localStorage.getItem("cart"));
+    return Array.isArray(cart) ? cart : [];
+};
+
 const initialState = {
-    cartItems: JSON.parse(localStorage.getItem("cart")) || [],
+    cartItems: getCartFromLocalStorage(),
 };
 
 const cartReducer = (state = initialState, action) => {
     let updatedCart;
+
     switch (action.type) {
         case "ADD_TO_CART":
-            const existingItem = state.cartItems.find(item => item.id === action.payload.id);
+            updatedCart = [...state.cartItems];
+            const existingItem = updatedCart.find(item => item.id === action.payload.id);
             if (existingItem) {
-                updatedCart = state.cartItems.map(item =>
+                updatedCart = updatedCart.map(item =>
                     item.id === action.payload.id ? { ...item, quantity: item.quantity + 1 } : item
                 );
             } else {
-                updatedCart = [...state.cartItems, { ...action.payload, quantity: 1 }];
+                updatedCart.push({ ...action.payload, quantity: 1 });
             }
             localStorage.setItem("cart", JSON.stringify(updatedCart));
             return { ...state, cartItems: updatedCart };
